@@ -6,6 +6,7 @@
 # @File     : classifier.py
 # 相关词条
 # backend 后台,后端
+# accuracy [ˈækjərəsi]  精确性,准确性
 
 import numpy as np
 np.random.seed(256)  # 随机数据再现
@@ -22,6 +23,7 @@ from keras.optimizers import RMSprop
 # 每个图片是一个向量,shape:28*28,及784个特征, 每个特征是表示颜色值(0-255,RGB)
 
 # 数据预处理(preprocessing)
+print(X_train.shape)  # [60000, 28 ,28]  数据预处理进行降维
 X_train = X_train.reshape(X_train.shape[0], -1) / 255.   # 数据预处理,标准化  将0-255的值转换成0-1
 X_test = X_test.reshape(X_test.shape[0], -1) / 255.      # 数据预处理
 y_train = np_utils.to_categorical(y_train, num_classes=10)  # 分类向量转换,10类

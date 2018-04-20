@@ -30,7 +30,8 @@ X_test, Y_test = X[160:], Y[160:]
 # 建立模型
 model = Sequential()
 # Dense层,指全链接层 input_dim,output_dim输入输出维度 input_shape 输入shape
-model.add(Dense(units=1, input_dim=1))
+model.add(Dense(units=1, input_dim=1))  # units 指输出维度
+# 模型只有一个层,切没有激活函数,则默认线性激活函数
 
 # 编译,激活模型compile共三个参数: loss误差函数'mse'均方误差 , optimizer优化器sgd梯度下降法, metrics 评估模型的指标
 model.compile(loss='mse', optimizer='sgd')

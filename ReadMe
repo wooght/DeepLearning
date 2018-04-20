@@ -1,0 +1,19 @@
+log()应用:
+防止向下溢出 如0.001*0.002*0..... 越乘越小,求对数是越小负得越多
+log(A*B) = loaA+logB
+
+nums = numpy.permutation(x.shape[0])  对x的第一维进行打乱,返回打乱的行号
+target = target[nums,:] 按照nums行号重新组建矩阵
+numpy.random.shuffle(x) 直接将x打乱,x本身打乱
+numpy.random.seed(123)  随机数复现
+numpy.array([[x,x+1] for x in range(50)])
+for _ in range(50) 等for在表达式中的应用格式.
+
+神经网络训练:
+1:训练数据要打乱,只有在打乱的情况下,才能联合计算权值
+2:数据要预处理,规范化.一般情况,数据要归一.
+keras.utils.np_utils.to_categorical(y_train, num_classes=10) 将类别向量化本类为1,非本类为0
+
+
+activation('指定激励函数')
+keras.models.compile(optimizer=优化函数,loss=损失函数,metrics=[评估函数列表])
